@@ -1,5 +1,3 @@
-```js
-// Edit the text below to make the surprise yours.
 const surprise = {
   intro: 'Heyy.. I NEED TO SHARE YOU A SMALL THING IN THIS MOMENT !!',
   title: 'Anaganaga Oka Amai... Vineetha',
@@ -22,48 +20,30 @@ const letterCopy = document.querySelector('#letter-copy');
 const signature = document.querySelector('#letter-signature');
 const music = document.querySelector('#surprise-music');
 
-// Add intro text
 introText.textContent = surprise.intro;
-
-// Add letter title
 letterTitle.textContent = surprise.title;
-
-// Add signature
 signature.textContent = surprise.signature;
 
-// Add paragraphs
 surprise.paragraphs.forEach((paragraph) => {
   const element = document.createElement('p');
   element.textContent = paragraph;
   letterCopy.appendChild(element);
 });
 
-// Function to switch between screens
 function showScreen(name) {
   screens.forEach((screen) => {
     const isVisible = screen.dataset.screen === name;
-
     screen.classList.toggle('is-visible', isVisible);
     screen.setAttribute('aria-hidden', String(!isVisible));
   });
 }
 
-// Next button
 document.querySelector('[data-action="next"]').addEventListener('click', () => {
   showScreen('prelude');
 });
 
-// Tap to Start button
 document.querySelector('[data-action="start"]').addEventListener('click', () => {
-
-  // Start music from 1 minute 7 seconds
   music.currentTime = 67;
-
-  music.play().catch(() => {
-    // The browser may reject playback when the audio file is unavailable.
-  });
-
-  // Show the letter
+  music.play().catch(() => {});
   showScreen('letter');
 });
-```
