@@ -4,6 +4,9 @@
   --page-pink: #f9eef7;
   --page-blue: #edf7ff;
   --text: #252525;
+  --romantic-serif: "Cormorant Garamond", Georgia, serif;
+  --classic-serif: "Playfair Display", Georgia, serif;
+  --script: "Parisienne", "Segoe Script", cursive;
 }
 
 * {
@@ -18,7 +21,7 @@ body {
 
 body {
   color: var(--text);
-  font-family: Roboto, Arial, sans-serif;
+  font-family: var(--romantic-serif);
   overflow: hidden;
 }
 
@@ -60,7 +63,11 @@ body {
 }
 
 .intro-text {
-  font-size: clamp(18px, 2.5vw, 21px);
+  font-family: var(--romantic-serif);
+  font-size: clamp(22px, 2.8vw, 28px);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -70,7 +77,7 @@ body {
   border-radius: 4px;
   color: #fff;
   cursor: pointer;
-  font: 500 16px Roboto, Arial, sans-serif;
+  font: 500 16px "Playfair Display", Georgia, serif;
   transition: filter 160ms ease, transform 160ms ease;
 }
 
@@ -123,18 +130,20 @@ body {
 
 .letter-card h1 {
   color: var(--pink);
-  font-family: Caveat, cursive;
+  font-family: var(--classic-serif);
   font-size: clamp(30px, 4.2vw, 38px);
   font-weight: 600;
   line-height: 1.2;
   margin: 0 0 19px;
   text-align: center;
+  letter-spacing: 0.03em;
 }
 
 .letter-copy {
-  font-family: Caveat, cursive;
+  font-family: var(--romantic-serif);
   font-size: 21px;
-  line-height: 1.38;
+  line-height: 1.55;
+  font-weight: 500;
 }
 
 .letter-copy p {
@@ -142,11 +151,12 @@ body {
 }
 
 .signature {
-  font-family: Caveat, cursive;
-  font-size: 22px;
+  font-family: var(--script);
+  font-size: 28px;
   font-style: italic;
   margin: 39px 0 0;
   text-align: right;
+  color: #7a2d42;
 }
 
 @media (max-width: 620px) {
